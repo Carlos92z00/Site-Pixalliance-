@@ -367,13 +367,15 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+  perspective: 1400px;
 }
 
 .ink-blob {
   position: absolute;
   border-radius: 50%;
   mix-blend-mode: multiply;
-  filter: blur(2px);
+  filter: blur(38px);
+  opacity: 0.55;
 }
 
 :root[data-theme="dark"] .ink-blob,
@@ -407,37 +409,43 @@ p {
   right: 4%;
 }
 
-.hero-visual-card {
+.hero-float-brochure {
   position: relative;
+  z-index: 1;
+  width: 82%;
+  border-radius: 18px;
+  box-shadow: 0 30px 60px -20px rgba(20, 23, 31, 0.35);
+  transform: rotate(-6deg);
+  animation: pxa-float-a 6s ease-in-out infinite;
+}
+
+.hero-float-card {
+  position: absolute;
   z-index: 2;
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 28px;
-  box-shadow: var(--shadow-soft);
-  width: 78%;
+  width: 46%;
+  right: 2%;
+  bottom: 6%;
+  border-radius: 14px;
+  filter: drop-shadow(0 24px 34px rgba(20, 23, 31, 0.4));
+  transform: rotate(9deg);
+  animation: pxa-float-b 5s ease-in-out infinite;
 }
 
-.hero-visual-card .stat {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-  margin-bottom: 18px;
+@keyframes pxa-float-a {
+  0%, 100% { transform: rotate(-6deg) translateY(0); }
+  50% { transform: rotate(-4deg) translateY(-10px); }
 }
 
-.hero-visual-card .stat:last-child {
-  margin-bottom: 0;
+@keyframes pxa-float-b {
+  0%, 100% { transform: rotate(9deg) translateY(0); }
+  50% { transform: rotate(11deg) translateY(-14px); }
 }
 
-.hero-visual-card .stat strong {
-  font-size: 1.9rem;
-  font-weight: 800;
-  color: var(--ink);
-}
-
-.hero-visual-card .stat span {
-  font-size: 0.88rem;
-  color: var(--muted);
+@media (prefers-reduced-motion: reduce) {
+  .hero-float-brochure,
+  .hero-float-card {
+    animation: none;
+  }
 }
 
 /* ---------- Trust strip ---------- */
