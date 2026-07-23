@@ -47,4 +47,78 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+  var revealTargets = document.querySelectorAll(
+    ".card, .value-card, .material-card, .location-card, .reveal"
+  );
+
+  if ("IntersectionObserver" in window && revealTargets.length) {
+    revealTargets.forEach(function (el) {
+      el.classList.add("reveal");
+    });
+
+    var revealObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+    );
+
+    revealTargets.forEach(function (el) {
+      revealObserver.observe(el);
+    });
+  } else {
+    revealTargets.forEach(function (el) {
+      el.classList.add("is-visible");
+    });
+  }
+
+  var counters = document.querySelectorAll("[data-count-to]");
+
+  if (counters.length) {
+    var animateCount = function (el) {
+      var target = parseFloat(el.getAttribute("data-count-to"));
+      var suffix = el.getAttribute("data-count-suffix") || "";
+      var duration = 1400;
+      var start = null;
+
+      function step(timestamp) {
+        if (!start) start = timestamp;
+        var progress = Math.min((timestamp - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        var value = Math.round(target * eased);
+        el.textContent = value.toLocaleString("fr-FR") + suffix;
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        }
+      }
+
+      requestAnimationFrame(step);
+    };
+
+    if ("IntersectionObserver" in window) {
+      var counterObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              animateCount(entry.target);
+              counterObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+
+      counters.forEach(function (el) {
+        counterObserver.observe(el);
+      });
+    } else {
+      counters.forEach(animateCount);
+    }
+  }
 });
