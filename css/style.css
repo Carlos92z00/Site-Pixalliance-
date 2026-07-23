@@ -409,48 +409,59 @@ p {
   right: 4%;
 }
 
-.hero-float-kakemono {
+.hero-float-banniere {
   position: absolute;
   z-index: 1;
-  width: 30%;
-  left: 0%;
+  width: 72%;
+  left: 10%;
+  top: 0%;
+  filter: drop-shadow(0 20px 32px rgba(20, 23, 31, 0.28));
+  transform: rotate(-4deg);
+  animation: pxa-float-d 8s ease-in-out infinite;
+}
+
+.hero-float-kakemono {
+  position: absolute;
+  z-index: 2;
+  width: 23%;
+  left: 4%;
   bottom: 0%;
   filter: drop-shadow(0 22px 30px rgba(20, 23, 31, 0.3));
-  transform: rotate(-7deg);
+  transform: rotate(-8deg);
   animation: pxa-float-c 7s ease-in-out infinite;
 }
 
 .hero-float-brochure {
   position: absolute;
-  z-index: 2;
-  width: 66%;
-  right: 0%;
-  top: 6%;
+  z-index: 3;
+  width: 48%;
+  right: 2%;
+  bottom: 18%;
   filter: drop-shadow(0 26px 40px rgba(20, 23, 31, 0.35));
-  transform: rotate(-6deg);
+  transform: rotate(4deg);
   animation: pxa-float-a 6s ease-in-out infinite;
 }
 
 .hero-float-card {
   position: absolute;
-  z-index: 3;
-  width: 38%;
-  right: 4%;
-  bottom: 4%;
+  z-index: 4;
+  width: 26%;
+  right: 0%;
+  bottom: 0%;
   border-radius: 14px;
   filter: drop-shadow(0 24px 34px rgba(20, 23, 31, 0.4));
-  transform: rotate(9deg);
+  transform: rotate(8deg);
   animation: pxa-float-b 5s ease-in-out infinite;
 }
 
 @keyframes pxa-float-a {
-  0%, 100% { transform: rotate(-6deg) translateY(0); }
-  50% { transform: rotate(-4deg) translateY(-10px); }
+  0%, 100% { transform: rotate(5deg) translateY(0); }
+  50% { transform: rotate(7deg) translateY(-10px); }
 }
 
 @keyframes pxa-float-b {
-  0%, 100% { transform: rotate(9deg) translateY(0); }
-  50% { transform: rotate(11deg) translateY(-14px); }
+  0%, 100% { transform: rotate(10deg) translateY(0); }
+  50% { transform: rotate(12deg) translateY(-14px); }
 }
 
 @keyframes pxa-float-c {
@@ -458,7 +469,13 @@ p {
   50% { transform: rotate(-5deg) translateY(-8px); }
 }
 
+@keyframes pxa-float-d {
+  0%, 100% { transform: rotate(-3deg) translateY(0); }
+  50% { transform: rotate(-1deg) translateY(-6px); }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .hero-float-banniere,
   .hero-float-kakemono,
   .hero-float-brochure,
   .hero-float-card {
@@ -975,6 +992,7 @@ a.card {
 
   .hero-visual {
     order: -1;
+    width: 100%;
     max-width: 420px;
     margin: 0 auto;
   }
