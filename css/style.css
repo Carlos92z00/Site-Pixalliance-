@@ -13,6 +13,12 @@
   --cyan: #00aeef;
   --magenta: #ec008c;
   --yellow: #ffd400;
+  --luxe-bg: #10121a;
+  --luxe-bg-soft: #181b26;
+  --luxe-text: #f4f1e8;
+  --luxe-muted: #a3a2ab;
+  --luxe-line: rgba(244, 241, 232, 0.12);
+  --gold: #c8a765;
 
   --radius: 14px;
   --container: 1180px;
@@ -480,6 +486,155 @@ p {
   .hero-float-brochure,
   .hero-float-card {
     animation: none;
+  }
+}
+
+/* ---------- Materials / luxe section ---------- */
+
+.materials-section {
+  background: var(--luxe-bg);
+  color: var(--luxe-text);
+  padding: 110px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.materials-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle at 15% 20%,
+    rgba(200, 167, 101, 0.12),
+    transparent 45%
+  ),
+  radial-gradient(
+    circle at 85% 80%,
+    rgba(200, 167, 101, 0.08),
+    transparent 40%
+  );
+  pointer-events: none;
+}
+
+.materials-head {
+  position: relative;
+  max-width: 640px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.materials-head .eyebrow {
+  color: var(--gold);
+  justify-content: center;
+}
+
+.materials-head .eyebrow .rule {
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+  display: inline-block;
+}
+
+.materials-head h2 {
+  color: var(--luxe-text);
+}
+
+.materials-head p {
+  color: var(--luxe-muted);
+}
+
+.material-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--luxe-line);
+  border: 1px solid var(--luxe-line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.material-card {
+  background: var(--luxe-bg);
+  padding: 40px 34px;
+  transition: background 0.25s ease;
+}
+
+.material-card:hover {
+  background: var(--luxe-bg-soft);
+}
+
+.material-card .num {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.material-card h3 {
+  color: var(--luxe-text);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.material-card p {
+  color: var(--luxe-muted);
+  font-size: 0.94rem;
+  margin-bottom: 0;
+}
+
+.locations-strip {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.location-card {
+  border: 1px solid var(--luxe-line);
+  border-radius: var(--radius);
+  padding: 28px 30px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.location-card svg {
+  width: 26px;
+  height: 26px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.location-card strong {
+  display: block;
+  color: var(--luxe-text);
+  margin-bottom: 3px;
+}
+
+.location-card span {
+  color: var(--luxe-muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  .material-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .locations-strip {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .material-grid {
+    grid-template-columns: 1fr;
+  }
+  .materials-section {
+    padding: 80px 0;
   }
 }
 
