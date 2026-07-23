@@ -413,8 +413,7 @@ p {
   position: relative;
   z-index: 1;
   width: 82%;
-  border-radius: 18px;
-  box-shadow: 0 30px 60px -20px rgba(20, 23, 31, 0.35);
+  filter: drop-shadow(0 26px 40px rgba(20, 23, 31, 0.35));
   transform: rotate(-6deg);
   animation: pxa-float-a 6s ease-in-out infinite;
 }
