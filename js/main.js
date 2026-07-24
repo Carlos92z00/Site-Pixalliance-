@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   var revealTargets = document.querySelectorAll(
-    ".card, .value-card, .material-card, .location-card, .reveal"
+    ".card, .value-card, .material-card, .location-card, .showcase-item, .statement-line, .reveal"
   );
 
   if ("IntersectionObserver" in window && revealTargets.length) {
