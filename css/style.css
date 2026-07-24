@@ -991,6 +991,113 @@ a.card {
   color: var(--ink);
 }
 
+/* ---------- Process timeline ---------- */
+
+.process-section {
+  background: var(--paper-dim);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.process-steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.process-line {
+  position: absolute;
+  top: 27px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: var(--line);
+  z-index: 0;
+}
+
+.process-line-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--cyan), var(--magenta), var(--yellow));
+  transition: width 1.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.process-steps.is-visible .process-line-fill {
+  width: 100%;
+}
+
+.process-step {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.process-steps.is-visible .process-step {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.process-step:nth-child(2) { transition-delay: 0.12s; }
+.process-step:nth-child(3) { transition-delay: 0.24s; }
+.process-step:nth-child(4) { transition-delay: 0.36s; }
+.process-step:nth-child(5) { transition-delay: 0.48s; }
+
+.process-num {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--ink);
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.process-step:hover .process-num {
+  background: var(--ink);
+  color: var(--paper);
+  transform: scale(1.08);
+}
+
+.process-step h3 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.process-step p {
+  font-size: 0.88rem;
+  max-width: 22ch;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .process-line {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ---------- CTA band ---------- */
 
 .cta-band {

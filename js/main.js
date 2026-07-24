@@ -78,6 +78,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  var processSteps = document.querySelector(".process-steps");
+
+  if (processSteps) {
+    if ("IntersectionObserver" in window) {
+      var processObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              processObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.3 }
+      );
+      processObserver.observe(processSteps);
+    } else {
+      processSteps.classList.add("is-visible");
+    }
+  }
+
   var counters = document.querySelectorAll("[data-count-to]");
 
   if (counters.length) {
