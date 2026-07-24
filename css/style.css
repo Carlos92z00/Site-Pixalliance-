@@ -797,6 +797,32 @@ a.card {
   border-bottom: none;
 }
 
+.service-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--paper-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.service-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.service-block:hover .service-icon {
+  transform: rotate(-6deg) scale(1.08);
+  background: linear-gradient(135deg, var(--cyan), var(--magenta));
+}
+
+.service-block:hover .service-icon svg {
+  stroke: var(--paper);
+}
+
 .service-block .num {
   font-size: 0.85rem;
   font-weight: 700;
@@ -820,6 +846,14 @@ a.card {
   border-radius: 999px;
   font-size: 0.86rem;
   font-weight: 600;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.service-tags li:hover {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+  transform: translateY(-3px);
 }
 
 /* ---------- Why us / values ---------- */

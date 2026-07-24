@@ -47,8 +47,10 @@
 
 <main>
 
-  <section class="page-header">
-    <div class="container">
+  <section class="page-header" style="position:relative; overflow:hidden;">
+    <div class="ink-blob c" style="width:220px; height:220px; top:-60px; right:8%; opacity:0.5;"></div>
+    <div class="ink-blob m" style="width:180px; height:180px; bottom:-70px; left:12%; opacity:0.4;"></div>
+    <div class="container" style="position:relative; z-index:1;">
       <div class="breadcrumb"><a href="index.html">Accueil</a> / Services</div>
       <span class="eyebrow"><span class="dots"><span></span><span></span><span></span><span></span></span> Nos métiers</span>
       <h1>Six métiers intégrés, une seule adresse</h1>
@@ -59,8 +61,9 @@
   <section>
     <div class="container">
 
-      <div class="service-block" id="impression">
+      <div class="service-block reveal" id="impression">
         <div>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#14171f" stroke-width="1.8"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></div>
           <span class="num">01 — Impression</span>
           <h2>Impression de vos supports de communication</h2>
         </div>
@@ -75,8 +78,9 @@
         </div>
       </div>
 
-      <div class="service-block" id="faconnage">
+      <div class="service-block reveal" id="faconnage">
         <div>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#14171f" stroke-width="1.8"><path d="M6 3v18M18 3v18"/><path d="M6 8h12M6 16h12"/></svg></div>
           <span class="num">02 — Façonnage</span>
           <h2>Façonnage &amp; finitions sur mesure</h2>
         </div>
@@ -95,8 +99,9 @@
         </div>
       </div>
 
-      <div class="service-block" id="routage">
+      <div class="service-block reveal" id="routage">
         <div>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#14171f" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg></div>
           <span class="num">03 — Routage</span>
           <h2>Routage &amp; mise sous pli</h2>
         </div>
@@ -113,8 +118,9 @@
         </div>
       </div>
 
-      <div class="service-block" id="signaletique">
+      <div class="service-block reveal" id="signaletique">
         <div>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#14171f" stroke-width="1.8"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8M12 16v4"/></svg></div>
           <span class="num">04 — Signalétique</span>
           <h2>Signalétique intérieure &amp; extérieure</h2>
         </div>
@@ -131,8 +137,9 @@
         </div>
       </div>
 
-      <div class="service-block" id="creation">
+      <div class="service-block reveal" id="creation">
         <div>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#14171f" stroke-width="1.8"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
           <span class="num">05 — Création graphique</span>
           <h2>Conception &amp; mise en page</h2>
         </div>
@@ -146,8 +153,9 @@
         </div>
       </div>
 
-      <div class="service-block" id="logistique">
+      <div class="service-block reveal" id="logistique">
         <div>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#14171f" stroke-width="1.8"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/></svg></div>
           <span class="num">06 — Logistique</span>
           <h2>Logistique &amp; stockage</h2>
         </div>
@@ -193,6 +201,9 @@
     <div class="container">
       <div class="cta-band">
         <div class="cta-band-dots"></div>
+        <div class="cta-glow c"></div>
+        <div class="cta-glow m"></div>
+        <div class="cta-glow y"></div>
         <h2>Un besoin qui combine plusieurs de ces métiers ?</h2>
         <p>C'est justement notre spécialité : décrivez-nous votre projet, nous nous chargeons de l'ensemble de la chaîne.</p>
         <div class="cta-actions">
