@@ -1604,6 +1604,43 @@ a.card {
   background: var(--paper-dim);
 }
 
+.page-header-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.page-header-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-header-visual img {
+  max-width: 78%;
+  filter: drop-shadow(0 24px 34px rgba(20, 23, 31, 0.25));
+  transform: rotate(-4deg);
+  animation: pxa-float-d 8s ease-in-out infinite;
+}
+
+@media (max-width: 900px) {
+  .page-header-grid {
+    grid-template-columns: 1fr;
+  }
+  .page-header-visual {
+    order: -1;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-header-visual img {
+    animation: none;
+  }
+}
+
 .breadcrumb {
   font-size: 0.85rem;
   color: var(--muted);
