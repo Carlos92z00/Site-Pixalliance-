@@ -47,8 +47,9 @@
 
 <main>
 
-  <section class="page-header">
-    <div class="container">
+  <section class="page-header" style="position:relative; overflow:hidden;">
+    <div class="aurora-bg"></div>
+    <div class="container" style="position:relative; z-index:1;">
       <div class="breadcrumb"><a href="index.html">Accueil</a> / À propos</div>
       <span class="eyebrow"><span class="dots"><span></span><span></span><span></span><span></span></span> Notre histoire</span>
       <h1>Une imprimerie à taille humaine, à Saint-Denis depuis 1995</h1>
@@ -66,6 +67,7 @@
       </div>
 
       <div class="timeline">
+        <div class="timeline-fill"></div>
         <div class="timeline-item">
           <div class="year">1995</div>
           <p>Création de Pixalliance à Saint-Denis, en Seine-Saint-Denis.</p>
@@ -97,8 +99,21 @@
           <strong data-count-to="3000" data-count-suffix="+">0+</strong>
           <span>clients fidèles</span>
         </div>
-        <div class="stat-block">
-          <strong data-count-to="100" data-count-suffix="%">0%</strong>
+        <div class="stat-block stat-ring">
+          <div class="ring-wrap">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <defs>
+                <linearGradient id="pxa-ring-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#00aeef"/>
+                  <stop offset="50%" stop-color="#ec008c"/>
+                  <stop offset="100%" stop-color="#ffd400"/>
+                </linearGradient>
+              </defs>
+              <circle class="ring-track" cx="50" cy="50" r="42"/>
+              <circle class="ring-fill" cx="50" cy="50" r="42"/>
+            </svg>
+            <strong data-count-to="100" data-count-suffix="%">0%</strong>
+          </div>
           <span>Made in France</span>
         </div>
       </div>
@@ -113,32 +128,32 @@
       </div>
 
       <div class="grid-3">
-        <div class="card">
+        <div class="card tilt-card">
           <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#14171f" stroke-width="1.8"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
           <h3>Qualité</h3>
           <p>Un contrôle rigoureux à chaque étape, de l'impression au façonnage, pour un résultat conforme à vos attentes.</p>
         </div>
-        <div class="card">
+        <div class="card tilt-card">
           <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#14171f" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
           <h3>Réactivité</h3>
           <p>Des délais tenus et un suivi de projet réactif, pour répondre aux impératifs de vos campagnes.</p>
         </div>
-        <div class="card">
+        <div class="card tilt-card">
           <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#14171f" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z"/></svg></div>
           <h3>Proximité</h3>
           <p>Un atelier implanté à Saint-Denis, un interlocuteur unique et disponible pour chacun de vos projets.</p>
         </div>
-        <div class="card">
+        <div class="card tilt-card">
           <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#14171f" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg></div>
           <h3>Engagement</h3>
           <p>Une prise en charge globale de vos projets, de la conception graphique à la livraison finale.</p>
         </div>
-        <div class="card">
+        <div class="card tilt-card">
           <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#14171f" stroke-width="1.8"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 21V9"/></svg></div>
           <h3>Organisation</h3>
           <p>Une gestion de stock et une logistique intégrée pour simplifier la diffusion de vos supports imprimés.</p>
         </div>
-        <div class="card">
+        <div class="card tilt-card">
           <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#14171f" stroke-width="1.8"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/></svg></div>
           <h3>Savoir-faire</h3>
           <p>Un atelier graphique et des finitions techniques maîtrisées, pour des supports soignés jusque dans le détail.</p>
@@ -151,7 +166,10 @@
     <div class="container">
       <div class="cta-band">
         <div class="cta-band-dots"></div>
-        <h2>Envie de travailler avec nous ?</h2>
+        <div class="cta-glow c"></div>
+        <div class="cta-glow m"></div>
+        <div class="cta-glow y"></div>
+        <h2 class="shimmer-text">Envie de travailler avec nous ?</h2>
         <p>Parlons de votre projet et voyons ensemble comment Pixalliance peut vous accompagner.</p>
         <div class="cta-actions">
           <a href="contact.html" class="btn btn-primary">Contacter Pixalliance</a>

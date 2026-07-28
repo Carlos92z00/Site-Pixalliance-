@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   var revealTargets = document.querySelectorAll(
-    ".card, .value-card, .material-card, .location-card, .showcase-item, .statement-line, .reveal"
+    ".card, .value-card, .material-card, .location-card, .showcase-item, .statement-line, .shimmer-text, .reveal"
   );
 
   if ("IntersectionObserver" in window && revealTargets.length) {
@@ -156,5 +156,69 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       counters.forEach(animateCount);
     }
+  }
+
+  var statRings = document.querySelectorAll(".stat-ring");
+
+  if ("IntersectionObserver" in window && statRings.length) {
+    var ringObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            ringObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    statRings.forEach(function (el) {
+      ringObserver.observe(el);
+    });
+  } else {
+    statRings.forEach(function (el) {
+      el.classList.add("is-visible");
+    });
+  }
+
+  var tiltCards = document.querySelectorAll(".tilt-card");
+
+  if (tiltCards.length && window.matchMedia("(hover: hover)").matches) {
+    tiltCards.forEach(function (card) {
+      card.addEventListener("mousemove", function (event) {
+        var rect = card.getBoundingClientRect();
+        var x = event.clientX - rect.left;
+        var y = event.clientY - rect.top;
+        var rotateX = ((y - rect.height / 2) / (rect.height / 2)) * -6;
+        var rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 6;
+        card.style.transform =
+          "perspective(700px) rotateX(" + rotateX.toFixed(2) + "deg) rotateY(" +
+          rotateY.toFixed(2) + "deg) translateY(-4px)";
+      });
+
+      card.addEventListener("mouseleave", function () {
+        card.style.transform = "";
+      });
+    });
+  }
+
+  var timelineTrack = document.querySelector(".timeline");
+  var timelineFill = document.querySelector(".timeline-fill");
+
+  if (timelineTrack && timelineFill) {
+    var updateTimelineProgress = function () {
+      var rect = timelineTrack.getBoundingClientRect();
+      var vh = window.innerHeight;
+      var start = vh * 0.85;
+      var end = vh * 0.25;
+      var span = rect.height + (start - end);
+      var progress = (start - rect.top) / span;
+      progress = Math.min(Math.max(progress, 0), 1);
+      timelineFill.style.height = (progress * 100) + "%";
+    };
+
+    window.addEventListener("scroll", updateTimelineProgress, { passive: true });
+    window.addEventListener("resize", updateTimelineProgress);
+    updateTimelineProgress();
   }
 });

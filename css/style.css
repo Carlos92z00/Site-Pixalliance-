@@ -520,6 +520,49 @@ p {
   }
 }
 
+.ring-wrap {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 10px;
+}
+
+.ring-wrap svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.ring-track {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 6;
+}
+
+.ring-fill {
+  fill: none;
+  stroke: url(#pxa-ring-gradient);
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 264;
+  stroke-dashoffset: 264;
+  transition: stroke-dashoffset 1.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.stat-ring.is-visible .ring-fill {
+  stroke-dashoffset: 0;
+}
+
+.ring-wrap strong {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 !important;
+  font-size: 1.5rem;
+}
+
 /* ---------- Materials / luxe section ---------- */
 
 .materials-section {
@@ -743,6 +786,16 @@ a.card {
 
 .card:hover {
   transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: transparent;
+}
+
+.tilt-card {
+  transition: transform 0.15s ease-out, box-shadow 0.2s ease, border-color 0.2s ease;
+  will-change: transform;
+}
+
+.tilt-card:hover {
   box-shadow: var(--shadow-hover);
   border-color: transparent;
 }
@@ -1120,9 +1173,27 @@ a.card {
 .timeline {
   position: relative;
   padding-left: 28px;
-  border-left: 2px solid var(--line);
   display: grid;
   gap: 40px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--line);
+}
+
+.timeline-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 0%;
+  background: linear-gradient(180deg, var(--cyan), var(--magenta), var(--yellow));
 }
 
 .timeline-item {
@@ -1357,6 +1428,39 @@ a.card {
   color: var(--paper);
   position: relative;
   z-index: 1;
+}
+
+.shimmer-text {
+  background-image: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0.75) 40%,
+    #fff 50%,
+    rgba(255, 255, 255, 0.75) 60%
+  );
+  background-size: 250% 100%;
+  background-position: 200% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+}
+
+.shimmer-text.is-visible {
+  animation: pxa-shimmer 1.8s ease 0.3s 1 forwards;
+}
+
+@keyframes pxa-shimmer {
+  to {
+    background-position: -50% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shimmer-text {
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    color: var(--paper) !important;
+  }
 }
 
 .cta-band .btn-primary {
@@ -1602,6 +1706,50 @@ a.card {
   padding: 64px 0 56px;
   border-bottom: 1px solid var(--line);
   background: var(--paper-dim);
+}
+
+.aurora-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.aurora-bg::before,
+.aurora-bg::after {
+  content: "";
+  position: absolute;
+  width: 55%;
+  height: 160%;
+  top: -30%;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.4;
+  animation: pxa-aurora-drift 18s ease-in-out infinite;
+}
+
+.aurora-bg::before {
+  left: -12%;
+  background: radial-gradient(circle, var(--cyan), transparent 70%);
+}
+
+.aurora-bg::after {
+  right: -12%;
+  background: radial-gradient(circle, var(--magenta), transparent 70%);
+  animation-delay: -9s;
+}
+
+@keyframes pxa-aurora-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(7%, 5%) scale(1.18); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora-bg::before,
+  .aurora-bg::after {
+    animation: none;
+  }
 }
 
 .page-header-grid {
