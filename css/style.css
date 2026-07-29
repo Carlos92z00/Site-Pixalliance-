@@ -1168,6 +1168,78 @@ a.card {
   }
 }
 
+/* ---------- Flip cards (clients) ---------- */
+
+.flip-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.flip-card {
+  perspective: 1200px;
+  height: 190px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  padding: 26px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.flip-front {
+  background: var(--paper);
+}
+
+.flip-front h3 {
+  font-size: 1.02rem;
+  margin: 0;
+}
+
+.flip-back {
+  background: var(--ink);
+  color: var(--paper);
+  transform: rotateY(180deg);
+  justify-content: center;
+}
+
+.flip-back p {
+  color: var(--paper);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .flip-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .flip-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ---------- Timeline (about page) ---------- */
 
 .timeline {
