@@ -2171,3 +2171,52 @@ a.card {
     text-align: center;
   }
 }
+
+/* ---------- Petit format hero visual ---------- */
+
+.pf-hero-visual {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pf-float-plaquette {
+  position: absolute;
+  z-index: 1;
+  width: 72%;
+  left: 4%;
+  top: 6%;
+  filter: drop-shadow(0 28px 44px rgba(20, 23, 31, 0.32));
+  transform: rotate(-6deg);
+  animation: pxa-float-c 8s ease-in-out infinite;
+}
+
+.pf-float-carte {
+  position: absolute;
+  z-index: 2;
+  width: 34%;
+  right: 4%;
+  bottom: 8%;
+  border-radius: 14px;
+  filter: drop-shadow(0 26px 36px rgba(20, 23, 31, 0.4));
+  transform: rotate(7deg);
+  animation: pxa-float-b 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pf-float-plaquette,
+  .pf-float-carte {
+    animation: none;
+  }
+}
+
+@media (max-width: 960px) {
+  .pf-hero-visual {
+    order: -1;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
