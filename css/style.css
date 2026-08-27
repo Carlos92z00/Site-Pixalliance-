@@ -1428,6 +1428,25 @@ a.card {
   }
 }
 
+.process-steps-icons .process-num {
+  border: none;
+  color: #fff;
+}
+
+.process-steps-icons .process-num svg {
+  width: 22px;
+  height: 22px;
+}
+
+.process-steps-icons .process-step:nth-child(2) .process-num { background: var(--cyan); }
+.process-steps-icons .process-step:nth-child(3) .process-num { background: var(--magenta); }
+.process-steps-icons .process-step:nth-child(4) .process-num { background: #d99a00; }
+.process-steps-icons .process-step:nth-child(5) .process-num { background: var(--ink); }
+
+.process-steps-icons .process-step:hover .process-num {
+  transform: scale(1.08);
+}
+
 /* ---------- FAQ accordion ---------- */
 
 .faq-list {
