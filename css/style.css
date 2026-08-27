@@ -2716,92 +2716,96 @@ a.card {
   }
 }
 
-/* ---------- Studio graphique canvas (services associés) ---------- */
+/* ---------- Studio graphique orbit (services associés) ---------- */
 
-.sa-canvas {
+.sa-orbit {
   position: relative;
-  aspect-ratio: 4 / 3.4;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 420px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 auto;
 }
 
-.sa-canvas-frame {
+.sa-orbit-ring {
+  position: absolute;
+  width: 78%;
+  height: 78%;
+  border-radius: 50%;
+  border: 2px dashed var(--line);
+  animation: pxa-sa-orbit-spin 40s linear infinite;
+}
+
+.sa-orbit-center {
   position: relative;
   z-index: 2;
-  width: 80%;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
   background: var(--paper);
   border: 1px solid var(--line);
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 30px 60px -20px rgba(20, 23, 31, 0.3);
-  transform: rotate(-2deg);
-  animation: pxa-float-a 8s ease-in-out infinite;
-}
-
-.sa-canvas-bar {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 10px 14px;
-  background: var(--paper-dim);
-  border-bottom: 1px solid var(--line);
+  justify-content: center;
+  box-shadow: 0 20px 50px -14px rgba(20, 23, 31, 0.28);
 }
 
-.sa-canvas-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--line);
-  display: inline-block;
-}
+.sa-orbit-center svg { width: 38px; height: 38px; }
 
-.sa-canvas-label {
-  margin-left: 8px;
-  font-size: 0.72rem;
-  color: var(--muted);
-}
-
-.sa-canvas-body {
-  padding: 34px 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-}
-
-.sa-canvas-mark {
-  width: 56px;
-  height: 56px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, var(--cyan), var(--magenta), var(--yellow));
-}
-
-.sa-canvas-line {
-  height: 8px;
-  border-radius: 4px;
-  background: var(--paper-dim);
-}
-
-.sa-canvas-line.w70 { width: 70%; }
-.sa-canvas-line.w50 { width: 50%; }
-
-.sa-swatch {
+.sa-orbit-swatch {
   position: absolute;
-  width: 52px;
-  height: 52px;
+  width: 44px;
+  height: 44px;
   border-radius: 10px;
   box-shadow: 0 14px 26px -10px rgba(20, 23, 31, 0.32);
-  animation: pxa-float-b 7s ease-in-out infinite;
 }
 
-.sa-swatch.c { background: var(--cyan); top: 6%; left: 2%; transform: rotate(-10deg); z-index: 1; }
-.sa-swatch.m { background: var(--magenta); bottom: 10%; right: 0%; transform: rotate(12deg); animation-delay: -2s; z-index: 3; }
-.sa-swatch.y { background: var(--yellow); top: 14%; right: 8%; transform: rotate(8deg); animation-delay: -4s; z-index: 1; }
+.sa-orbit-swatch.c { background: var(--cyan); top: 4%; left: 50%; margin-left: -22px; animation: pxa-sa-orbit-float-c 6s ease-in-out infinite; }
+.sa-orbit-swatch.m { background: var(--magenta); bottom: 12%; right: 6%; animation: pxa-sa-orbit-float-m 6s ease-in-out infinite; animation-delay: -2s; }
+.sa-orbit-swatch.y { background: var(--yellow); bottom: 12%; left: 6%; animation: pxa-sa-orbit-float-y 6s ease-in-out infinite; animation-delay: -4s; }
+
+.sa-orbit-tag {
+  position: absolute;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 5px 12px;
+  white-space: nowrap;
+  box-shadow: 0 8px 20px -10px rgba(20, 23, 31, 0.2);
+}
+
+.sa-orbit-tag.t1 { top: 20%; left: 0%; }
+.sa-orbit-tag.t2 { top: 46%; right: -2%; }
+.sa-orbit-tag.t3 { bottom: 20%; left: -2%; }
+
+@keyframes pxa-sa-orbit-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pxa-sa-orbit-float-c {
+  0%, 100% { transform: rotate(-8deg) translateY(0); }
+  50% { transform: rotate(-8deg) translateY(-10px); }
+}
+
+@keyframes pxa-sa-orbit-float-m {
+  0%, 100% { transform: rotate(10deg) translateY(0); }
+  50% { transform: rotate(10deg) translateY(-10px); }
+}
+
+@keyframes pxa-sa-orbit-float-y {
+  0%, 100% { transform: rotate(-6deg) translateY(0); }
+  50% { transform: rotate(-6deg) translateY(-10px); }
+}
 
 @media (prefers-reduced-motion: reduce) {
-  .sa-canvas-frame,
-  .sa-swatch {
+  .sa-orbit-ring,
+  .sa-orbit-swatch {
     animation: none;
   }
 }
