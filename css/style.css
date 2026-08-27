@@ -358,15 +358,11 @@ p {
 .hero-copy {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 34px;
 }
 
 .hero-copy > * {
   margin-bottom: 0 !important;
-}
-
-.hero-copy > .eyebrow {
-  margin-bottom: 14px !important;
 }
 
 .hero-copy .hero-actions {
