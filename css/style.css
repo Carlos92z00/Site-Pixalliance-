@@ -2392,6 +2392,10 @@ a.card {
   align-items: center;
 }
 
+.sa-hero-tags {
+  justify-content: center;
+}
+
 /* ---------- Grid 4 ---------- */
 
 .grid-4 {
