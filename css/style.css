@@ -2362,7 +2362,7 @@ a.card {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
-  align-items: stretch;
+  align-items: start;
 }
 
 .sa-hero-copy {
@@ -2377,7 +2377,7 @@ a.card {
 
 .sa-visual {
   position: relative;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 5 / 4;
   display: flex;
   align-items: center;
   justify-content: center;
