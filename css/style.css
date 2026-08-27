@@ -358,6 +358,11 @@ p {
 .hero-copy {
   display: flex;
   flex-direction: column;
+  gap: 18px;
+}
+
+.hero-copy > * {
+  margin-bottom: 0 !important;
 }
 
 .hero-copy .hero-actions {
