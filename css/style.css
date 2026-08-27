@@ -365,6 +365,10 @@ p {
   margin-bottom: 0 !important;
 }
 
+.hero-copy > .eyebrow {
+  margin-bottom: 14px !important;
+}
+
 .hero-copy .hero-actions {
   margin-top: auto;
   padding-top: 28px;
