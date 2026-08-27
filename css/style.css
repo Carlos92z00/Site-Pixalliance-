@@ -352,7 +352,7 @@ p {
   display: grid;
   grid-template-columns: 0.8fr 1.3fr;
   gap: 40px;
-  align-items: center;
+  align-items: start;
 }
 
 .hero-copy p.lead {
