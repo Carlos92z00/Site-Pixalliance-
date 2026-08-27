@@ -352,7 +352,17 @@ p {
   display: grid;
   grid-template-columns: 0.8fr 1.3fr;
   gap: 40px;
-  align-items: start;
+  align-items: stretch;
+}
+
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-copy .hero-actions {
+  margin-top: auto;
+  padding-top: 28px;
 }
 
 .hero-copy p.lead {
