@@ -2446,6 +2446,44 @@ a.card {
   }
 }
 
+/* ---------- Routage hero (photo pleine largeur) ---------- */
+
+.rt-hero {
+  padding: 90px 0 100px;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+
+.rt-hero-inner {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.rt-hero-visual {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 34px 70px -24px rgba(20, 23, 31, 0.35);
+}
+
+.rt-hero-visual img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3.2;
+  object-fit: cover;
+}
+
+@media (max-width: 960px) {
+  .rt-hero-inner {
+    grid-template-columns: 1fr;
+  }
+  .rt-hero-visual {
+    order: -1;
+  }
+}
+
 /* ---------- Services associés hero (flow diagram) ---------- */
 
 .sa-hero {
