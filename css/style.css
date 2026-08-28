@@ -2448,7 +2448,9 @@ a.card {
 /* ---------- Delivery radar (services associés) ---------- */
 
 .sa-delivery {
-  background: var(--ink);
+  background: var(--paper-dim);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
   padding: 100px 0;
   overflow: hidden;
 }
@@ -2496,10 +2498,11 @@ a.card {
   height: 92px;
   border-radius: 50%;
   background: var(--paper);
+  border: 1px solid var(--line);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 20px 50px -14px rgba(20, 23, 31, 0.28);
 }
 
 .sa-radar-center svg {
@@ -2511,29 +2514,25 @@ a.card {
   position: absolute;
   font-size: 0.7rem;
   font-weight: 700;
-  color: var(--paper);
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
   border-radius: 999px;
   padding: 5px 12px;
   white-space: nowrap;
-  backdrop-filter: blur(4px);
+  box-shadow: 0 8px 20px -10px rgba(20, 23, 31, 0.2);
 }
 
 .sa-radar-tag.t1 { top: 8%; left: 50%; transform: translateX(-50%); }
 .sa-radar-tag.t2 { bottom: 20%; right: 2%; }
 .sa-radar-tag.t3 { bottom: 4%; left: 0%; }
 
-.sa-delivery-copy .eyebrow-light {
-  color: var(--paper);
-}
-
 .sa-delivery-copy h2 {
-  color: var(--paper);
+  color: var(--ink);
 }
 
 .sa-delivery-copy p {
-  color: rgba(250, 249, 246, 0.72);
+  color: var(--muted);
   font-size: 1.05rem;
   max-width: 48ch;
 }
