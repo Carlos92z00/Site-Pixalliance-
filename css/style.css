@@ -224,10 +224,10 @@ p {
   letter-spacing: -0.02em;
 }
 
-.logo-mark {
-  width: 34px;
+.logo img {
   height: 34px;
-  flex-shrink: 0;
+  width: auto;
+  display: block;
 }
 
 .main-nav {
