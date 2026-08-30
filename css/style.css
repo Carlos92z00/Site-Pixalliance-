@@ -485,6 +485,8 @@ p {
 .hero-visual {
   position: relative;
   aspect-ratio: 1 / 1;
+  max-width: 560px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
