@@ -2370,7 +2370,8 @@ a.card {
 .gf-hero {
   position: relative;
   overflow: hidden;
-  background: var(--ink);
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
   padding: 110px 0 100px;
 }
 
@@ -2379,8 +2380,8 @@ a.card {
   inset: 0;
   background-image: repeating-linear-gradient(
     -35deg,
-    rgba(255, 255, 255, 0.05) 0px,
-    rgba(255, 255, 255, 0.05) 1px,
+    rgba(20, 23, 31, 0.05) 0px,
+    rgba(20, 23, 31, 0.05) 1px,
     transparent 1px,
     transparent 26px
   );
@@ -2392,8 +2393,8 @@ a.card {
   position: absolute;
   border-radius: 50%;
   filter: blur(90px);
-  opacity: 0.45;
-  mix-blend-mode: screen;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
   animation: pxa-glow-float 11s ease-in-out infinite;
 }
 
@@ -2411,15 +2412,15 @@ a.card {
 }
 
 .gf-hero-copy .eyebrow {
-  color: var(--paper);
+  color: var(--ink);
 }
 
 .gf-hero-copy h1 {
-  color: var(--paper);
+  color: var(--ink);
 }
 
 .gf-hero-copy .lead {
-  color: rgba(250, 249, 246, 0.72);
+  color: var(--muted);
   max-width: 44ch;
 }
 
