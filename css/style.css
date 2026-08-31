@@ -683,28 +683,13 @@ p {
 /* ---------- Materials / luxe section ---------- */
 
 .materials-section {
-  background: var(--luxe-bg);
-  color: var(--luxe-text);
+  background: var(--paper-dim);
+  color: var(--ink);
   padding: 110px 0;
   position: relative;
   overflow: hidden;
-}
-
-.materials-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(
-    circle at 15% 20%,
-    rgba(200, 167, 101, 0.12),
-    transparent 45%
-  ),
-  radial-gradient(
-    circle at 85% 80%,
-    rgba(200, 167, 101, 0.08),
-    transparent 40%
-  );
-  pointer-events: none;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 .materials-head {
@@ -715,23 +700,23 @@ p {
 }
 
 .materials-head .eyebrow {
-  color: var(--gold);
+  color: var(--ink);
   justify-content: center;
 }
 
 .materials-head .eyebrow .rule {
   width: 28px;
   height: 1px;
-  background: var(--gold);
+  background: var(--muted);
   display: inline-block;
 }
 
 .materials-head h2 {
-  color: var(--luxe-text);
+  color: var(--ink);
 }
 
 .materials-head p {
-  color: var(--luxe-muted);
+  color: var(--muted);
 }
 
 .material-grid {
@@ -739,39 +724,39 @@ p {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
-  background: var(--luxe-line);
-  border: 1px solid var(--luxe-line);
+  background: var(--line);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
 }
 
 .material-card {
-  background: var(--luxe-bg);
+  background: var(--paper);
   padding: 40px 34px;
   transition: background 0.25s ease;
 }
 
 .material-card:hover {
-  background: var(--luxe-bg-soft);
+  background: var(--paper-dim);
 }
 
 .material-card .num {
   display: block;
   font-size: 0.78rem;
   letter-spacing: 0.1em;
-  color: var(--gold);
+  color: var(--magenta);
   font-weight: 700;
   margin-bottom: 18px;
 }
 
 .material-card h3 {
-  color: var(--luxe-text);
+  color: var(--ink);
   font-weight: 600;
   margin-bottom: 10px;
 }
 
 .material-card p {
-  color: var(--luxe-muted);
+  color: var(--muted);
   font-size: 0.94rem;
   margin-bottom: 0;
 }
