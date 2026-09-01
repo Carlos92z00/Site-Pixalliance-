@@ -1200,76 +1200,20 @@ a.card {
   }
 }
 
-.value-grid-4 {
-  grid-template-columns: repeat(4, 1fr);
-  margin-top: 36px;
-  margin-bottom: 64px;
+.picking-kicker {
+  color: var(--muted);
+  font-size: 0.96rem;
 }
 
-@media (max-width: 900px) {
-  .value-grid-4 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 620px) {
-  .value-grid-4 {
-    grid-template-columns: 1fr;
-  }
-}
-
-.picking-subhead {
-  text-align: center;
-  font-size: 1.3rem;
-  margin: 0 0 8px;
-}
-
-.picking-table {
-  max-width: 860px;
-  margin: 36px auto 64px;
+.picking-list-card {
+  background: var(--paper-dim);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  overflow: hidden;
+  padding: 40px 36px;
 }
 
-.picking-row {
-  display: grid;
-  grid-template-columns: 0.85fr 1.6fr;
-  gap: 24px;
-  padding: 22px 26px;
-  background: var(--paper);
-}
-
-.picking-row:nth-child(even) {
-  background: var(--paper-dim);
-}
-
-.picking-service {
-  font-weight: 700;
-  color: var(--ink);
-}
-
-.picking-desc {
-  color: var(--muted);
-  font-size: 0.94rem;
-}
-
-@media (max-width: 620px) {
-  .picking-row {
-    grid-template-columns: 1fr;
-    gap: 6px;
-  }
-}
-
-.picking-cta {
-  text-align: center;
-  max-width: 60ch;
-  margin: 0 auto;
-}
-
-.picking-cta p {
-  color: var(--muted);
-  margin-bottom: 22px;
+.picking-list-card .check-list {
+  margin: 0;
 }
 
 /* ---------- Reveal on scroll ---------- */
