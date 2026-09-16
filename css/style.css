@@ -2374,37 +2374,26 @@ a.card {
 .pf-hero-visual {
   position: relative;
   aspect-ratio: 1 / 1;
+  max-width: 380px;
+  margin: 0 auto;
+  align-self: center;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.pf-float-plaquette {
-  position: absolute;
+.pf-hero-photo {
+  position: relative;
   z-index: 1;
-  width: 72%;
-  left: 4%;
-  top: 6%;
+  width: 84%;
+  border-radius: 18px;
+  transform: rotate(-2deg);
   filter: drop-shadow(0 28px 44px rgba(20, 23, 31, 0.32));
-  transform: rotate(-6deg);
-  animation: pxa-float-c 8s ease-in-out infinite;
-}
-
-.pf-float-carte {
-  position: absolute;
-  z-index: 2;
-  width: 34%;
-  right: 4%;
-  bottom: 8%;
-  border-radius: 14px;
-  filter: drop-shadow(0 26px 36px rgba(20, 23, 31, 0.4));
-  transform: rotate(7deg);
-  animation: pxa-float-b 6s ease-in-out infinite;
+  animation: pxa-gf-drift 9s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .pf-float-plaquette,
-  .pf-float-carte {
+  .pf-hero-photo {
     animation: none;
   }
 }
@@ -2413,7 +2402,7 @@ a.card {
   .pf-hero-visual {
     order: -1;
     width: 100%;
-    max-width: 420px;
+    max-width: 340px;
     margin: 0 auto;
   }
 }
