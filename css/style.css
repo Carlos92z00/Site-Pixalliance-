@@ -2209,7 +2209,8 @@ a.card {
 .career-hero {
   position: relative;
   overflow: hidden;
-  background: var(--ink);
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
   padding: 120px 0 100px;
   text-align: center;
 }
@@ -2217,8 +2218,8 @@ a.card {
 .career-hero-grid {
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(20, 23, 31, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 23, 31, 0.05) 1px, transparent 1px);
   background-size: 44px 44px;
   -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, black 0%, transparent 75%);
   mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, black 0%, transparent 75%);
@@ -2228,8 +2229,8 @@ a.card {
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.4;
-  mix-blend-mode: screen;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
   animation: pxa-glow-float 10s ease-in-out infinite;
 }
 
@@ -2245,17 +2246,17 @@ a.card {
 }
 
 .career-eyebrow {
-  color: var(--paper) !important;
+  color: var(--ink) !important;
   justify-content: center;
 }
 
 .career-hero h1 {
-  color: var(--paper);
+  color: var(--ink);
   font-size: clamp(2.2rem, 4.5vw, 3.2rem);
 }
 
 .career-hero .lead {
-  color: rgba(250, 249, 246, 0.72);
+  color: var(--muted);
   font-size: 1.1rem;
   max-width: 56ch;
   margin-left: auto;
