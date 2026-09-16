@@ -1216,6 +1216,20 @@ a.card {
   margin: 0;
 }
 
+.picking-media {
+  margin: -40px -36px 24px;
+  border-radius: var(--radius) var(--radius) 0 0;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.picking-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 /* ---------- Reveal on scroll ---------- */
 
 .reveal {
