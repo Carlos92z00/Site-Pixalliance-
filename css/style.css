@@ -1216,7 +1216,7 @@ a.card {
   border-radius: var(--radius);
   padding: 24px 22px;
   max-width: 360px;
-  margin-left: auto;
+  margin: 0 auto;
 }
 
 .picking-list-card .check-list {
@@ -1249,7 +1249,7 @@ a.card {
 
   .picking-list-card {
     max-width: 420px;
-    margin-left: 0;
+    margin: 0 auto;
   }
 }
 
