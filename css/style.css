@@ -692,6 +692,17 @@ p {
   border-bottom: 1px solid var(--line);
 }
 
+.pf-finitions {
+  background: var(--paper-dim);
+  padding: 110px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.pf-finitions .card {
+  background: var(--paper);
+}
+
 .materials-head {
   position: relative;
   max-width: 640px;
