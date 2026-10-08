@@ -1778,8 +1778,8 @@ a.card {
   background: var(--paper-dim);
   border: 1px solid var(--line);
   border-radius: 18px;
-  padding: 30px 28px;
-  margin-top: 8px;
+  padding: 40px 36px;
+  margin-top: 16px;
 }
 
 .gf-mid-cta-bar {
@@ -1793,13 +1793,14 @@ a.card {
 
 .gf-mid-cta h2 {
   font-size: 1.3rem;
-  margin: 0 0 8px;
+  margin: 0 0 12px;
 }
 
 .gf-mid-cta p {
   color: var(--muted);
   font-size: 0.98rem;
-  margin: 0 0 22px;
+  line-height: 1.55;
+  margin: 0 0 28px;
 }
 
 /* ---------- Contact page ---------- */
@@ -2510,7 +2511,7 @@ a.card {
   z-index: 1;
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
-  gap: 48px;
+  gap: 64px;
   align-items: center;
 }
 
@@ -2525,6 +2526,11 @@ a.card {
 .gf-hero-copy .lead {
   color: var(--muted);
   max-width: 44ch;
+  margin-bottom: 36px;
+}
+
+.gf-hero-copy h1 {
+  margin-bottom: 20px;
 }
 
 .gf-hero-visual {
